@@ -1,0 +1,15 @@
+{
+  "name": "bloco-de-notas",
+  "version": "1.0.0",
+  "description": "Aplicativo desktop para criar e organizar anotações.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^45.2.2"
+  },
+  "allowScripts": {
+    "electron@45.2.2": true
+  }
+}
