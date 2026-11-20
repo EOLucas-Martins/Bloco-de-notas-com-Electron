@@ -1,0 +1,263 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #e7e9e8;
+  background: #151718;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 720px;
+  min-height: 100vh;
+  margin: 0;
+  color: #e7e9e8;
+  background: #151718;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.estrutura-aplicativo {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.barra-lateral {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #1d2021;
+  border-right: 1px solid #343839;
+}
+
+.cabecalho-aplicativo h1 {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+
+.botao-nova-anotacao,
+.botao-estado-vazio {
+  padding: 10px;
+  border: 1px solid #4a7d52;
+  border-radius: 4px;
+  background: #416b48;
+  color: #ffffff;
+}
+
+.botao-nova-anotacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botao-nova-anotacao span {
+  font-size: 11px;
+}
+
+.titulo-lista-anotacoes {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.quantidade-anotacoes {
+  color: #99a39b;
+  font-weight: normal;
+}
+
+.lista-anotacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+.item-anotacao {
+  width: 100%;
+  padding: 10px;
+  color: #e7e9e8;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  text-align: left;
+}
+
+.item-anotacao:hover,
+.item-anotacao.selecionado {
+  border-color: #414647;
+  background: #292d2e;
+}
+
+.titulo-item-anotacao,
+.resumo-item-anotacao {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titulo-item-anotacao {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.resumo-item-anotacao,
+.data-item-anotacao {
+  margin-top: 5px;
+  color: #99a39b;
+  font-size: 12px;
+}
+
+.area-trabalho {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 0 32px;
+}
+
+.barra-ferramentas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  border-bottom: 1px solid #343839;
+}
+
+.status-salvamento {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #99a39b;
+  font-size: 12px;
+}
+
+.indicador-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5b965d;
+}
+
+.status-salvamento.salvando .indicador-status {
+  background: #c89a36;
+}
+
+.status-salvamento.erro {
+  color: #d78a82;
+}
+
+.status-salvamento.erro .indicador-status {
+  background: #d78a82;
+}
+
+.botao-acao,
+.botao-excluir {
+  padding: 7px 10px;
+  color: #e7e9e8;
+  border: 1px solid #484d4e;
+  border-radius: 4px;
+  background: #292d2e;
+}
+
+.botao-acao:disabled {
+  cursor: default;
+  opacity: .5;
+}
+
+.editor-anotacao {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: min(100%, 700px);
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.campo-titulo {
+  padding: 8px 0;
+  color: #e7e9e8;
+  border: 0;
+  border-bottom: 1px solid #343839;
+  outline: 0;
+  background: transparent;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.campo-titulo::placeholder,
+.campo-conteudo::placeholder {
+  color: #7f8981;
+}
+
+.data-anotacao {
+  margin: 10px 0 20px;
+  color: #99a39b;
+  font-size: 12px;
+}
+
+.campo-conteudo {
+  flex: 1;
+  min-height: 300px;
+  padding: 8px 0;
+  color: #e7e9e8;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  line-height: 1.6;
+  resize: none;
+}
+
+.estado-vazio {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.estado-vazio h2 {
+  font-size: 20px;
+}
+
+.estado-vazio p {
+  max-width: 360px;
+  color: #99a39b;
+  line-height: 1.5;
+}
+
+.botao-estado-vazio {
+  margin-top: 10px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 850px) {
+  .estrutura-aplicativo {
+    grid-template-columns: 230px 1fr;
+  }
+
+  .barra-lateral {
+    padding: 16px;
+  }
+
+  .area-trabalho {
+    padding: 0 20px;
+  }
+}

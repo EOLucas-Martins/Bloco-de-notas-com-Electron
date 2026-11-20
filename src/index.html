@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloco de notas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="estrutura-aplicativo">
+    <aside class="barra-lateral">
+      <header class="cabecalho-aplicativo">
+        <h1>Bloco de notas</h1>
+      </header>
+
+      <button class="botao-nova-anotacao" id="new-note" type="button">
+        Nova anotação <span>Ctrl+N</span>
+      </button>
+
+      <div class="titulo-lista-anotacoes">
+        <span>ANOTAÇÕES</span>
+        <span class="quantidade-anotacoes" id="note-count">0</span>
+      </div>
+      <nav class="lista-anotacoes" id="notes-list" aria-label="Anotações"></nav>
+    </aside>
+
+    <section class="area-trabalho" aria-label="Editor de anotações">
+      <div class="barra-ferramentas">
+        <div class="status-salvamento" id="save-status" aria-live="polite">
+          <span class="indicador-status"></span>
+          <span>Suas notas são salvas automaticamente</span>
+        </div>
+        <button class="botao-acao botao-excluir" id="delete-note" type="button" aria-label="Excluir anotação"
+          title="Excluir anotação" disabled>Excluir</button>
+      </div>
+
+      <div class="editor-anotacao" id="editor" hidden>
+        <input class="campo-titulo" id="note-title" type="text" maxlength="120" placeholder="Título da anotação"
+          aria-label="Título da anotação" />
+        <div class="data-anotacao" id="note-meta"></div>
+        <textarea class="campo-conteudo" id="note-content" placeholder="Comece a escrever..."
+          aria-label="Conteúdo da anotação"></textarea>
+      </div>
+
+      <div class="estado-vazio" id="empty-state">
+        <h2 id="empty-title">Tudo começa com uma anotação.</h2>
+        <p id="empty-description">Registre uma ideia, um plano ou qualquer coisa que queira lembrar.</p>
+        <button class="botao-estado-vazio" id="empty-action" type="button">Criar primeira anotação</button>
+      </div>
+    </section>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+
+</html>
