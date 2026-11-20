@@ -50,7 +50,7 @@ npm --version
 1. Abra um terminal na pasta do projeto. No Windows, por exemplo:
 
    ```powershell
-   cd "C:\Users\Lucas\Downloads\Projeto"
+   cd "C:\Users\Teste\Downloads\Projeto"
    ```
 
 2. Instale as dependências:
